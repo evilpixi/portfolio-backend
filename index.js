@@ -23,6 +23,7 @@ app.use(express.json());
 
 app.get('/', async (req, res) =>
 {
+  res.send('Hello World');
   console.log("-----------------------------------------------");
   const defaultPromp = `This is a call from the Server API, tell me a random character name from Inuyasha`;
 
@@ -33,7 +34,7 @@ app.get('/', async (req, res) =>
 
   const message = completion.choices[0].message;
 
-  res.send(message.content);
+  //res.send(message.content);
   console.log(message.content);
 });
 
