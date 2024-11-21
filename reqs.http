@@ -12,3 +12,12 @@ content-type: application/json
 
 ### get from deploy
 GET https://pixiportfoliobackend.netlify.app/.netlify/functions/api
+
+### post from deploy
+POST https://pixiportfoliobackend.netlify.app/.netlify/functions/api/ask
+
+content-type: application/json
+
+{
+  "prompt": "Dame datos de un campeon de league of legends"
+}

@@ -9,29 +9,43 @@ const openai = new OpenAI({
 
 exports.handler = async (event, context) =>
 {
+  // ----------------------- Routes -----------------------
+
+  // --------- GET / ---------
   if (event.httpMethod === 'GET')
   {
     return {
-      statusCode: 200,
       body: JSON.stringify({ message: 'Pixi loves you!' }),
-    }
-    /*try
+    };
+  }
+
+  // --------- POST /ask ---------
+  if (event.httpMethod === 'POST')
+  {
+    try
     {
-      // Process the GET request as needed
-      const data = require('./db.json');
+      // Process the POST request as needed
+      const { prompt } = JSON.parse(event.body);
+
+      const completion = await openai.chat.completions.create({
+        messages: [{ role: "user", content: prompt }],
+        model: "gpt-4o",
+      });
+
+      const message = completion.choices[0].message;
 
       // Return the data as the response
       return {
         statusCode: 200,
-        body: JSON.stringify(data),
+        body: JSON.stringify({ message: message.content }),
       };
     } catch (error)
     {
       // Return an error response if there was an issue processing the request
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to process GET request' }),
+        body: JSON.stringify({ error: 'Failed to process POST request' }),
       };
-    }*/
+    }
   }
 };
