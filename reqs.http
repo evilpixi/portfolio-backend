@@ -32,7 +32,6 @@ GET https://pixiportfoliobackend.netlify.app/.netlify/functions/api/
 
 ### post from deploy
 POST https://pixiportfoliobackend.netlify.app/.netlify/functions/api/ask
-
 content-type: application/json
 
 {
