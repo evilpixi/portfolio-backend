@@ -1,6 +1,7 @@
 require('dotenv').config();
 const OpenAI = require('openai');
 
+console.log("IS THIS WORKING!????")
 const openai = new OpenAI({
   organization: process.env.OPENAI_ORGANIZATION_ID,
   project: process.env.OPENAI_PROJECT_ID,
@@ -45,12 +46,16 @@ exports.handler = async (event, context) =>
 
 
       const { prompt } = JSON.parse(text);
+      console.log("prompt:", prompt);
+      console.log("openai:");
+      console.log(openai);
 
       const completion = await openai.chat.completions.create({
         messages: [{ role: "user", content: prompt }],
         model: "gpt-4o",
       });
 
+      console.log("didnt break")
       const message = completion.choices[0].message;
 
       // Return the data as the response
