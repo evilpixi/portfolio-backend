@@ -1,0 +1,10 @@
+### get index
+GET http://localhost:3000/
+
+### ask
+POST http://localhost:3000/ask
+content-type: application/json
+
+{
+  "prompt": "Gimme a joke"
+}
