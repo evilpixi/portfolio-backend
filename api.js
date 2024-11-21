@@ -51,7 +51,7 @@ exports.handler = async (event, context) =>
       // Return an error response if there was an issue processing the request
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to process POST request', errorDetails: error }),
+        body: JSON.stringify({ error: 'Failed to process POST request', errorDetails: error, event: event }),
       };
     }
   }
