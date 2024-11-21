@@ -28,6 +28,12 @@ exports.handler = async (event, context) =>
       // Process the POST request as needed
       const { prompt } = JSON.parse(event.body);
 
+      return {
+        statusCode: 200,
+        body: JSON.stringify(prompt)
+      };
+
+      // --- this for the next deployment
       const completion = await openai.chat.completions.create({
         messages: [{ role: "user", content: prompt }],
         model: "gpt-4o",
