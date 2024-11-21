@@ -15,11 +15,12 @@ exports.handler = async (event, context) =>
   if (event.httpMethod === 'GET')
   {
     return {
-      body: JSON.stringify({ message: 'Pixi loves you!' }),
+      body: JSON.stringify({ message: 'Pixi loves you!' })
     };
   }
 
   // --------- POST /ask ---------
+  /*
   if (event.httpMethod === 'POST')
   {
     try
@@ -48,4 +49,5 @@ exports.handler = async (event, context) =>
       };
     }
   }
+    */
 };
