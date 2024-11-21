@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "name": "Pikachu",
+  "type": "Electric",
+  "level": 25,
+  "moves": [
+    "Thunder Shock",
+    "Quick Attack",
+    "Iron Tail",
+    "Electro Ball"
+  ]
+}
