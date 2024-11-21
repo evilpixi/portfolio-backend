@@ -15,12 +15,12 @@ exports.handler = async (event, context) =>
   if (event.httpMethod === 'GET')
   {
     return {
+      statusCode: 200,
       body: JSON.stringify({ message: 'Pixi loves you!' })
     };
   }
 
   // --------- POST /ask ---------
-  /*
   if (event.httpMethod === 'POST')
   {
     try
@@ -45,9 +45,9 @@ exports.handler = async (event, context) =>
       // Return an error response if there was an issue processing the request
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: 'Failed to process POST request' }),
+        body: JSON.stringify({ error: 'Failed to process POST request', errorDetails: error }),
       };
     }
   }
-    */
+
 };
