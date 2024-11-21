@@ -16,7 +16,7 @@ exports.handler = async (event, context) =>
   {
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Pixi loves you!' })
+      body: JSON.stringify({ message: 'Pixi loves you 2!' })
     };
   }
 
@@ -25,10 +25,23 @@ exports.handler = async (event, context) =>
   {
     try
     {
-      // Process the POST request as needed
-      const decodedBody = Buffer.from(event.body, 'base64').toString('utf-8');
-      const { prompt } = JSON.parse(decodedBody);
+      // Process the POST request as needed}
+      console.log(`\x1b[32mPixi!! :D\x1b[0m`)
+      console.log(event.body);
 
+      let text = event.body;
+      console.log(text);
+
+      if (event.body.isBase64Encoded)
+      {
+        console.log('is base64 encoded');
+        const buff = Buffer.from(event.body, 'base64');
+        text = buff.toString('utf-8');
+        console.log(text);
+      }
+
+
+      const { prompt } = JSON.parse(text);
       return {
         statusCode: 200,
         body: JSON.stringify(prompt)

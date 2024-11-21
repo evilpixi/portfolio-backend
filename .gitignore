@@ -50,3 +50,6 @@ public/
 # VS Code directories
 .vscode/
 .history/
+
+# Local Netlify folder
+.netlify
