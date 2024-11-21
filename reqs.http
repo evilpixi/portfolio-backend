@@ -8,3 +8,7 @@ content-type: application/json
 {
   "prompt": "Gimme a joke"
 }
+
+
+### get from deploy
+GET https://pixiportfoliobackend.netlify.app/.netlify/functions/api

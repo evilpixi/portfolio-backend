@@ -1,8 +1,21 @@
+require('dotenv').config();
+const OpenAI = require('openai');
+
+const openai = new OpenAI({
+  organization: process.env.OPENAI_ORGANIZATION_ID,
+  project: process.env.OPENAI_PROJECT_ID,
+  apiKey: process.env.OPENAI_API_KEY
+});
+
 exports.handler = async (event, context) =>
 {
   if (event.httpMethod === 'GET')
   {
-    try
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Pixi loves you!' }),
+    }
+    /*try
     {
       // Process the GET request as needed
       const data = require('./db.json');
@@ -19,6 +32,6 @@ exports.handler = async (event, context) =>
         statusCode: 500,
         body: JSON.stringify({ error: 'Failed to process GET request' }),
       };
-    }
+    }*/
   }
 };
