@@ -32,11 +32,14 @@ exports.handler = async (event, context) =>
       let text = event.body;
       console.log(text);
 
-      if (event.body.isBase64Encoded)
+      if (event.isBase64Encoded)
       {
         console.log('is base64 encoded');
         const buff = Buffer.from(event.body, 'base64');
+        console.log("Buff: ");
+        console.log(buff);
         text = buff.toString('utf-8');
+        console.log("----\nText: ");
         console.log(text);
       }
 
