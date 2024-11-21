@@ -26,7 +26,8 @@ exports.handler = async (event, context) =>
     try
     {
       // Process the POST request as needed
-      const { prompt } = JSON.parse(event.body);
+      const decodedBody = Buffer.from(event.body, 'base64').toString('utf-8');
+      const { prompt } = JSON.parse(decodedBody);
 
       return {
         statusCode: 200,
