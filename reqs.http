@@ -26,9 +26,15 @@ content-type: application/json
 
 
 
+### get /api from deploy
+GET https://pixiportfoliobackend.netlify.app/api
+
 
 ### get from deploy
 GET https://pixiportfoliobackend.netlify.app/.netlify/functions/api
+
+### get pixi from deploy
+GET https://pixiportfoliobackend.netlify.app/.netlify/functions/pixi
 
 ### post from deploy
 POST https://pixiportfoliobackend.netlify.app/.netlify/functions/api/ask

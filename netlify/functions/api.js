@@ -42,3 +42,4 @@ router.post('/ask', async (req, res) =>
 
 api.use(express.json());
 api.use('/api/', router);
+export const handler = serverless(api);
