@@ -9,7 +9,8 @@ console.log("---- PIXI WANTED TO START THE SERVER ----");
 const openai = new OpenAI({
   organization: process.env.OPENAI_ORGANIZATION_ID,
   project: process.env.OPENAI_PROJECT_ID,
-  apiKey: process.env.OPENAI_API_KEY
+  //apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.KEY2
 });
 
 const app = express();
