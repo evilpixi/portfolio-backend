@@ -47,8 +47,6 @@ exports.handler = async (event, context) =>
 
       const { prompt } = JSON.parse(text);
       console.log("prompt:", prompt);
-      console.log("openai:");
-      console.log(openai);
 
       const completion = await openai.chat.completions.create({
         messages: [{ role: "user", content: prompt }],
