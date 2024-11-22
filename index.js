@@ -4,6 +4,8 @@ const OpenAI = require('openai');
 const morgan = require('morgan');
 require('dotenv').config();
 
+console.log("---- PIXI WANTED TO START THE SERVER ----");
+
 const openai = new OpenAI({
   organization: process.env.OPENAI_ORGANIZATION_ID,
   project: process.env.OPENAI_PROJECT_ID,
